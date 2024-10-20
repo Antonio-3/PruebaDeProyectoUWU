@@ -24,8 +24,15 @@ with st.sidebar:
 
 if seleccion_menu == "Inicio":
         st.image(image='img/LogoUnixd.png', caption="", use_column_width=True)
-        st.write("Prueba")
+        st.write("\n")
+        st.title("Bienvenidos a PAJD")
+        St.write("Somos Antonio, Perla , Josue y Danahy, estudiantes de la Universidad De Colima. ")
+        st.write("\n")
+        St.write("Este proyecto tiene como objetivo crear un programa para que un admistrador pueda consultar o asignar las faltas de asistencia de profesores, materias, o dependiendo del programa educativo")
+        st.write("\n")
+        St.write("A lo largo de esta página, encontrarás información sobre nuestro trabajo, ideas y logros a lo largo del proceso. Esperamos que disfrutes navegando por nuestra página y descubras más sobre este emocionante proyecto.")
 
+                
 if seleccion_menu == "Consultar tablas":
         st.write("Prueba")
 st.sidebar.write("\n")

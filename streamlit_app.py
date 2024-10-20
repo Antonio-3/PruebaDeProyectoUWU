@@ -21,11 +21,7 @@ with st.sidebar:
         """
         seleccion_menu = option_menu(
             menu_title="Menú",
-            options=[
-                "Consultar tablas", 
-                "Asistencias",
-            ],
-            )
+            options=["Consultar tablas", "Asistencias"])
 st.sidebar.write("\n")
 st.sidebar.button("Generar Reportes")
         

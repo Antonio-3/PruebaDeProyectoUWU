@@ -25,6 +25,4 @@ with st.sidebar:
                 "Asistencias",
             ],
             )
-
-        button("Decargar Reporte")
         

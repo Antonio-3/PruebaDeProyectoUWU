@@ -1,26 +1,33 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import ConsultarTablas
 
 st.sidebar.image(image='img/LogoPerla.png',caption="")
 st.sidebar.caption("Bienvenido Admin!.")
 
-with st.sidebar:
-        beta_sign = """
-        <span style="
-        font-size: 10px;
-        font-weight: bold;
-        color: #ffffff;
-        background-color: #ff5733;
-        padding: 5px 10px;
-        border-radius: 4px;
-        ">
-            BETA
-        </span>
-        """
-        seleccion_menu = option_menu(
-            menu_title="Menú",
-            options=["Consultar tablas", "Asistencias"]
-        )
+
+st.set_page_config(
+       page_title="Menu" 
+)
+
+class Paginas:
+        def __init__(self):
+                self.apps=[]
+        def add_app(self, title, func):
+                self.apps.append({
+                        "title": title,
+                        "function": function
+                })
+        def correr():
+            with st.sidebar:
+                seleccion_menu = option_menu(
+                     menu_title="Menú",
+                    options=["Consultar tablas", "Asistencias"],
+                    styles={
+                          "container": {"padding": "5!important", "background-color": 'black'},                   
+                    }
+                )
+
 st.sidebar.write("\n")
 st.sidebar.button("Generar Reportes")
         

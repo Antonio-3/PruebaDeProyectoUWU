@@ -6,7 +6,7 @@ import ConsultarTablas, Asistencias
 st.sidebar.image(image='img/imagenProyecto.PNG',caption="")
 st.sidebar.caption("Bienvenido Admin!.")
 
-clas MultiApplicaciones:
+class MultiApplicaciones:
         def _init_(self):
             self.apps= []
         def add_app(self, title, function):

@@ -22,6 +22,10 @@ with st.sidebar:
             options=["Inicio","Consultar tablas", "Asistencias"]
         )
 
+if seleccion_menu == "Inicio":
+        st.image(image='img/LogoPerla.png',caption="")
+        st.write("Prueba")
+
 if seleccion_menu == "Consultar tablas":
         st.write("Prueba")
 st.sidebar.write("\n")

@@ -1,6 +1,5 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import ConsultarTablas
 
 st.sidebar.image(image='img/LogoPerla.png',caption="")
 st.sidebar.caption("Bienvenido Admin!.")

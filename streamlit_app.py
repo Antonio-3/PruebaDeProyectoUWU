@@ -34,7 +34,10 @@ if seleccion_menu == "Inicio":
 
                 
 if seleccion_menu == "Consultar tablas":
-        st.write("Prueba")
+        st.title("Tablas")
+if seleccion_menu == "Asistencias":
+        st.title("Asistencias")
+        
 st.sidebar.write("\n")
 st.sidebar.button("Generar Reportes")
         

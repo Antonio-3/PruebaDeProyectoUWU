@@ -25,7 +25,7 @@ with st.sidebar:
 if seleccion_menu == "Inicio":
         st.image(image='img/LogoUnixd.png', caption="", use_column_width=True)
         st.write("\n")
-        st.title("Bienvenidos a PAJD")
+        st.title("Bienvenidos a nuestro proyecto :)")
         st.write("Somos Antonio, Perla , Josue y Danahy, estudiantes de la Universidad De Colima. ")
         st.write("\n")
         st.write("Este proyecto tiene como objetivo crear un programa para que un admistrador pueda consultar o asignar las faltas de asistencia de profesores, materias, o dependiendo del programa educativo")

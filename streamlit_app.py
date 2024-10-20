@@ -23,7 +23,7 @@ with st.sidebar:
         )
 
 if seleccion_menu == "Inicio":
-        st.image(image='img/LogoPerla.png',caption="")
+        st.image(image='img/LogoUnixd.png',caption="")
         st.write("Prueba")
 
 if seleccion_menu == "Consultar tablas":

@@ -25,4 +25,6 @@ with st.sidebar:
                 "Asistencias",
             ],
             )
+
+st.sidebar.button("Generar Reportes")
         

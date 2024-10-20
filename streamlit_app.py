@@ -19,7 +19,7 @@ with st.sidebar:
         """
         seleccion_menu = option_menu(
             menu_title="Menú",
-            options=["Consultar tablas", "Asistencias"]
+            options=["Inicio","Consultar tablas", "Asistencias"]
         )
 
 if seleccion_menu == "Consultar tablas":

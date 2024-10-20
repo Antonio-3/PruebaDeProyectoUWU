@@ -1,7 +1,23 @@
-from streamlit_option_menu import option_menu
 import streamlit as st
+from streamlit_option_menu import option_menu
 
-selected = option_menu("Main Menu", ["Home", "Settings"], 
-    icons=['house', 'gear'], menu_icon="cast", default_index=0)
+## Logo de la empresa
+st.sidebar.image(image='img/imagenProyecto.PNG',caption="")
+st.sidebar.write("Bienvenido Admin!.")
 
-st.write(f"Selected option: {selected}")
+st.sidebar.caption("Que desea hacer?")
+st.sidebar.write("\n")
+st.sidebar.selectbox("Seleccione una opcion:", ['Consultar tablas', 'Apartado de Asistencias'])
+
+st.sidebar.title("Menu")
+opciones=["Consultar tablas", "Apartado de Asistencias"]
+
+st.sidebar.seleccion_menu = option_menu(
+            menu_title="Menú",
+            options=[
+                "Autenticarse", 
+                "Registrarse",
+                "Personalizar",
+                "Distribuir",                
+            ]
+            )

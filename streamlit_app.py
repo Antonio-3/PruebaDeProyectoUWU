@@ -3,7 +3,7 @@ from streamlit_option_menu import option_menu
 
 
 st.sidebar.image(image='img/imagenProyecto.PNG',caption="")
-st.sidebar.write("Bienvenido Admin!.")
+st.sidebar.caption("Bienvenido Admin!.")
 
 with st.sidebar:
         beta_sign = """

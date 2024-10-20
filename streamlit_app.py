@@ -25,6 +25,6 @@ with st.sidebar:
                 "Asistencias",
             ],
             )
-
+st.sidebar.write("\n")
 st.sidebar.button("Generar Reportes")
         

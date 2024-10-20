@@ -21,6 +21,9 @@ with st.sidebar:
             menu_title="Menú",
             options=["Consultar tablas", "Asistencias"]
         )
+
+if seleccion_menu == "Consultar tablas":
+        st.write("Prueba")
 st.sidebar.write("\n")
 st.sidebar.button("Generar Reportes")
         

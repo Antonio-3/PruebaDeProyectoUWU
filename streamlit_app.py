@@ -1,6 +1,7 @@
+from streamlit_option_menu import option_menu
 import streamlit as st
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+selected = option_menu("Main Menu", ["Home", "Settings"], 
+    icons=['house', 'gear'], menu_icon="cast", default_index=0)
+
+st.write(f"Selected option: {selected}")

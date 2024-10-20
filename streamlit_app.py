@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-st.sidebar.image(image='img/imagenProyecto.PNG',caption="")
+st.sidebar.image(image='img/LogoPerla.PNG',caption="")
 st.sidebar.caption("Bienvenido Admin!.")
 
 with st.sidebar:

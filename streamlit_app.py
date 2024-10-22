@@ -40,9 +40,7 @@ if seleccion_menu == "Consultar tablas":
         conexion = sqlite3.connect('ProfesoresPrueba.db')
         cursor = conexion.cursor()
         # Seleccionar todas las materias
-        cursor.execute('''
-        SELECT * FROM materiaprofe
-        ''')
+        cursor.execute('''SELECT * FROM materiaprofe''')
         # Recuperar todos los registros
         materiaprofe = cursor.fetchall()
         # Mostrar los registros

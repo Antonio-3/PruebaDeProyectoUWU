@@ -72,7 +72,7 @@ if seleccion_menu == "Generar Reportes":
         pr = st.button("Generar reporte del profesor")
         if pr==True:
                 cursor.execute('''
-                SELECT * FROM materiaprofe WHERE Profesor = seleccion_profeexd['Profesor']
+                SELECT * FROM materiaprofe WHERE Profesor = 'seleccion_profeexd['Profesor']'
                 ''')
                 st.write("\nLista de Proferores:\n")
                 st.write("{:<5} {:<25} {:<20} {:<10} {:20} {:<25} {:<20}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))

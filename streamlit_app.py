@@ -47,7 +47,7 @@ if seleccion_menu == "Consultar tablas":
         materiaprofe = cursor.fetchall()
         # Mostrar los registros
         for materia in materiaprofe:
-        print(materia)
+                print(materia)
         # Cerrar la conexión
         conexion.close()
         

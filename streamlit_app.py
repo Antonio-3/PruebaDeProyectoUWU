@@ -48,7 +48,6 @@ if seleccion_menu == "Consultar tablas":
         xd = cursor.fetchall()
         # Mostrar los registros de forma estructurada
         st.write("\nLista de Proferores:\n")
-        df = pd.DataFrame(data)
         st.table(df)
         st.write("{:<5} {:<25} {:<20} {:<10} {:20} {:<25} {:<20}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
         st.write("-" * 60)

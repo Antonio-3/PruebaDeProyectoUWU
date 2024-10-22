@@ -50,8 +50,8 @@ if seleccion_menu == "Consultar tablas":
         st.write('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia')
         st.write("-" * 60)
         for materia in materias:
-        st.write(materia[0], materia[1], materia[2],
-        materia[3], materia[4], materia[5], materia[6])
+                st.write(materia[0], materia[1], materia[2],
+                materia[3], materia[4], materia[5], materia[6])
         # Cerrar la conexión
         conexion.close()
 

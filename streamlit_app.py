@@ -40,6 +40,6 @@ if seleccion_menu == "Asistencias":
         
 st.sidebar.write("\n")
 
-BotonReporte = st.sidebar.button("Generar Reportes")
-        st.sidebar.write(BotonReporte)
+pr = st.sidebar.button("Generar Reportes")
+        st.sidebar.write(pr)
         

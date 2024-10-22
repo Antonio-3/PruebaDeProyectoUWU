@@ -68,18 +68,28 @@ if seleccion_menu == "Generar Reportes":
         xd = cursor.fetchall()
         df = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
         seleccion_profeexd = st.selectbox('Selecciona un profesor:', df['Profesor'])
+        conexion.close()
         
         pr = st.button("Generar reporte del profesor")
         if pr==True:
-                st.write(f"Profesor seleccionado: {seleccion_profeexd}")
+                # Conectar a la base de datos
+                conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+                cursor = conexion.cursor()
+                # Seleccionar todas las materias
                 cursor.execute('''
                 SELECT * FROM materiaprofe WHERE Profesor = xddd
                 ''', (seleccion_profeexd,))
+                # Recuperar todos los registros
+                jsjsjs = cursor.fetchall()
+                # Mostrar los registros de forma estructurada
+                st.write("\nLista de Proferores:\n")
                 st.write("{:<5} {:<25} {:<20} {:<10} {:20} {:<25} {:<20}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
                 st.write("-" * 60)
-                for lol in xd:
-                        st.write("{:<5} {:<25} {:<20} {:<10} {:<25} {:<20} {:<10}".format(lol[0], lol[1], lol[2],
-                         lol[3], lol[4], lol[5], lol[6]))
+                for lol1 in jsjsjs:
+                        st.write("{:<5} {:<25} {:<20} {:<10} {:<25} {:<20} {:<10}".format(lol1[0], lol1[1], lol1[2],
+                         lol1[3], lol1[4], lol1[5], lol1[6]))
+                conexion.close()
+
+
                 
-                
-        conexion.close()
+        

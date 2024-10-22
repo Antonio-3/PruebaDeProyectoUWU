@@ -37,7 +37,7 @@ if seleccion_menu == "Inicio":
                 
 if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
-         # Conectar a la base de datos
+        # Conectar a la base de datos
         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
         cursor = conexion.cursor()
         # Seleccionar todas las materias
@@ -62,13 +62,12 @@ if seleccion_menu == "Asistencias":
 
 if seleccion_menu == "Generar Reportes":
         st.title("Generar Reportes")
-
-         # Conectar a la base de datos
+        # Conectar a la base de datos
         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
         cursor = conexion.cursor()
         # Seleccionar todas las materias
         cursor.execute('''
-        SELECT Profesores FROM materiaprofe
+        SELECT Profesor FROM materiaprofe
          ''')
         # Recuperar todos los registros
         xd = cursor.fetchall()

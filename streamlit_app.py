@@ -71,8 +71,11 @@ if seleccion_menu == "Generar Reportes":
          ''')
         # Recuperar todos los registros
         xd = cursor.fetchall()
-        for lol in xd:
-                OpcionesReporte = st.selectbox("Profesor",[lol[0]])
+        OpcionesReporte = st.selectbox("Profesor",
+                                       for lol in xd:
+                                               [lol[xd]])
+        
+                
         
 pr = st.sidebar.button("Generar Reportes")
 if pr==True:

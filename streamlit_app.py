@@ -42,7 +42,7 @@ if seleccion_menu == "Consultar tablas":
         cursor = conexion.cursor()
         
         # Verificar si la tabla existe
-        cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='materiaprofe';")
+        cursor.execute("SELECT * FROM materiaprofe WHERE type='table' AND name='materiaprofe';")
         if cursor.fetchone() is None:
             st.error("La tabla 'materiaprofe' no existe en la base de datos.")
         else:

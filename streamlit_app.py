@@ -73,7 +73,7 @@ if seleccion_menu == "Generar Reportes":
         # Recuperar todos los registros
         xd = cursor.fetchall()
 
-        seleccion_profe = st.selectbox('Selecciona un profesor:', df['Profesor'])
+        seleccion_profe = st.selectbox('Selecciona un profesor:', cursor['Profesor'])
     
 pr = st.sidebar.button("Generar Reportes")
 if pr==True:

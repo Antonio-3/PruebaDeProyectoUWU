@@ -71,6 +71,7 @@ if seleccion_menu == "Generar Reportes":
         
         pr = st.button("Generar reporte del profesor")
         if pr==True:
+                st.write(f"Profesor seleccionado: {seleccion_profeexd}")
                 cursor.execute('''
                 SELECT * FROM materiaprofe WHERE Profesor = ?
                 ''', (seleccion_profeexd,))

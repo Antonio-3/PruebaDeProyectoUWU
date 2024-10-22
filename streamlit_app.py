@@ -43,5 +43,5 @@ st.sidebar.write("\n")
 BotonReporte = st.sidebar.button("Generar Reportes")
 
 if BotonReporte == "true":
-        st.write("XD")
+        st.sidebar.write("XD")
         

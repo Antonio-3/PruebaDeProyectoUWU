@@ -19,7 +19,7 @@ with st.sidebar:
         """
         seleccion_menu = option_menu(
             menu_title="Menú",
-            options=["Inicio","Consultar tablas", "Asistencias"]
+            options=["Inicio","Consultar tablas", "Asistencias", "Generar Reportes"]
         )
 
 if seleccion_menu == "Inicio":
@@ -37,9 +37,9 @@ if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")
+if seleccion_menu == "Generar Reportes":
+        st.title("Generar Reportes")
         
-st.sidebar.write("\n")
-
 pr = st.sidebar.button("Generar Reportes")
 if pr==True:
         st.write("xd")

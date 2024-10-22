@@ -36,25 +36,24 @@ if seleccion_menu == "Inicio":
                 
 if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
-        # Conectar a la base de datos
-        conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+         # Conectar a la base de datos
+        conexion = sqlite3.connect('/BasePrueba/ProfesoresPrueba.db')
         cursor = conexion.cursor()
-        
-        # Verificar si la tabla existe
-        cursor.execute("SELECT * FROM materiaprofe WHERE type='table' AND name='materiaprofe';")
-        if cursor.fetchone() is None:
-            st.error("La tabla 'materiaprofe' no existe en la base de datos.")
-        else:
-            st.success("La tabla 'materiaprofe' fue detectada.")
-
-            # Consultar los nombres de las columnas
-            cursor.execute("PRAGMA table_info(materiaprofe);")
-            columnas = cursor.fetchall()
-            st.write("Columnas en la tabla 'materiaprofe':")
-            for columna in columnas:
-                st.write(columna[1])  # columna[1] tiene el nombre de la columna
-                 conexion.close()
-
+        # Seleccionar todas las materias
+        cursor.execute('''
+        SELECT * FROM materiaprofe
+        ''')
+        # Recuperar todos los registros
+        materias = cursor.fetchall()
+        # Mostrar los registros de forma estructurada
+        st.write("\nLista de Proferores:\n")
+        st.write('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia')
+        st.write("-" * 60)
+        for materia in materias:
+                st.caption(materia[0], materia[1], materia[2],
+                materia[3], materia[4], materia[5], materia[6])
+                # Cerrar la conexión
+                conexion.close()
 
         
 if seleccion_menu == "Asistencias":

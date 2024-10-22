@@ -49,11 +49,7 @@ if seleccion_menu == "Consultar tablas":
         # Mostrar los registros de forma estructurada
         st.write("\nLista de Proferores:\n")
 
-        data = {
-                'Producto': ['ID', 'Profesores', 'Materia'],
-                'Precio': [1.5, 0.75, 2.0],
-                'Cantidad': [10, 20, 15]
-        }
+        tabla_datos.append([ID, Profesores, Materia, Carrera, Fecha, Horario, Asistencia])
 
         df = pd.DataFrame(data)
         st.table(df)

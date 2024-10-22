@@ -70,7 +70,6 @@ if seleccion_menu == "Consultar tablas":
         if conexion:
             conexion.close()
 
-
         
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")

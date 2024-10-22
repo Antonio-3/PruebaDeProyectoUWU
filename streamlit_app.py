@@ -42,5 +42,5 @@ st.sidebar.write("\n")
 
 pr = st.sidebar.button("Generar Reportes")
 if pr==True:
-        st.sidebar.write("xd")
+        st.write("xd")
         

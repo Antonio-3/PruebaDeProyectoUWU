@@ -47,7 +47,7 @@ if seleccion_menu == "Consultar tablas":
         materias = cursor.fetchall()
         # Mostrar los registros de forma estructurada
         st.write("\nLista de Materias:\n")
-        st.write("{:<5} {:<25} {:<20} {:<10}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
+        st.write('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia')
         st.write("-" * 60)
         for materia in materias:
         st.write("{:<5} {:<25} {:<20} {:<10}".format(materia[0], materia[1], materia[2],

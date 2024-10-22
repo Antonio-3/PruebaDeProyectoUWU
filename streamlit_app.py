@@ -37,24 +37,38 @@ if seleccion_menu == "Inicio":
 if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
          # Conectar a la base de datos
-        conexion = sqlite3.connect('/BasePrueba/ProfesoresPrueba.db')
+    try:
+        conexion = sqlite3.connect('ProfesoresPrueba.db')
         cursor = conexion.cursor()
-        
+
+        # Verificar las tablas existentes en la base de datos
+        cursor.execute('''SELECT name FROM sqlite_master WHERE type='table';''')
+        tablas = cursor.fetchall()
+
+        st.write("Tablas en la base de datos:", tablas)
+
+        # Verificar si la tabla 'materiaprofe' existe
+        if not any(tabla[0] == 'materiaprofe' for tabla in tablas):
+            st.write("La tabla 'materiaprofe' no existe.")
+        else:
             # Ejecutar consulta para seleccionar todas las materias
-        cursor.execute('''SELECT * FROM materiaprofe''')
-        
+            cursor.execute('''SELECT * FROM materiaprofe''')
+
             # Recuperar todos los registros
-        materiaprofe = cursor.fetchall()
-        
-            # Si hay datos, mostrarlos
-         if materiaprofe:
-                # Mostrar los registros en formato tabla
-                st.table(materiaprofe)  # También puedes usar st.write(materiaprofe)
-         else:
-                st.write("No se encontraron registros.")
-        
-            # Cerrar la conexión
-        conexion.close()
+            materiaprofe = cursor.fetchall()
+
+            # Mostrar los registros en formato tabla
+            if materiaprofe:
+                st.table(materiaprofe)
+            else:
+                st.write("No se encontraron registros en la tabla.")
+    
+    except sqlite3.Error as e:
+        st.write(f"Error al conectar o consultar la base de datos: {e}")
+    
+    finally:
+        if conexion:
+            conexion.close()
 
 
         

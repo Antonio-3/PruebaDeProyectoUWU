@@ -46,11 +46,11 @@ if seleccion_menu == "Consultar tablas":
         # Recuperar todos los registros
         materias = cursor.fetchall()
         # Mostrar los registros de forma estructurada
-        print("\nLista de Materias:\n")
-        print("{:<5} {:<25} {:<20} {:<10}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
-        print("-" * 60)
+        st.write("\nLista de Materias:\n")
+        st.write("{:<5} {:<25} {:<20} {:<10}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
+        st.write("-" * 60)
         for materia in materias:
-        print("{:<5} {:<25} {:<20} {:<10}".format(materia[0], materia[1], materia[2],
+        st.write("{:<5} {:<25} {:<20} {:<10}".format(materia[0], materia[1], materia[2],
         materia[3], materia[4], materia[5], materia[6]))
         # Cerrar la conexión
         conexion.close()

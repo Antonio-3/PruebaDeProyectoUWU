@@ -64,8 +64,6 @@ if seleccion_menu == "Generar Reportes":
         st.title("Generar Reportes")
         # Conectar a la base de datos
         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
-        cursor = conexion.cursor()
-        xd = cursor.fetchall()
         df = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
         seleccion_profeexd = st.selectbox('Selecciona un profesor:', df['Profesor'])
         conexion.close()
@@ -74,13 +72,13 @@ if seleccion_menu == "Generar Reportes":
         if pr==True:
                 # Conectar a la base de datos
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
-                cursor = conexion.cursor()
+                cursorr = conexion.cursor()
                 # Seleccionar todas las materias
-                cursor.execute('''
+                cursorr.execute('''
                 SELECT * FROM materiaprofe WHERE Profesor = xddd
                 ''', (seleccion_profeexd,))
                 # Recuperar todos los registros
-                jsjsjs = cursor.fetchall()
+                jsjsjs = cursorr.fetchall()
                 # Mostrar los registros de forma estructurada
                 st.write("\nLista de Proferores:\n")
                 st.write("{:<5} {:<25} {:<20} {:<10} {:20} {:<25} {:<20}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))

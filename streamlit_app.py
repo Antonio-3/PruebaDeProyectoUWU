@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import sqlite3
+import pandas as pd
 
 st.sidebar.image(image='img/LogoPerla.png',caption="")
 st.sidebar.caption("Bienvenido Admin!.")

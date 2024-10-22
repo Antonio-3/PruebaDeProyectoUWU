@@ -58,8 +58,22 @@ if seleccion_menu == "Consultar tablas":
         
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")
+
+
 if seleccion_menu == "Generar Reportes":
         st.title("Generar Reportes")
+
+         # Conectar a la base de datos
+        conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+        cursor = conexion.cursor()
+        # Seleccionar todas las materias
+        cursor.execute('''
+        SELECT Profesores FROM materiaprofe
+         ''')
+        # Recuperar todos los registros
+        xd = cursor.fetchall()
+        for lol in xd
+                OpcionesReporte = st.selectbox("Profesor",[lol[0]])
         
 pr = st.sidebar.button("Generar Reportes")
 if pr==True:

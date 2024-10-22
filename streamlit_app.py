@@ -49,7 +49,14 @@ if seleccion_menu == "Consultar tablas":
         # Mostrar los registros de forma estructurada
         st.write("\nLista de Proferores:\n")
 
-        pd.DataFrame(tabla_datos, columns=['Mes', 'Pago Mensual', 'Interés', 'Amortización', 'Saldo Restante'])
+        data = {
+                'Producto': ['Manzana', 'Plátano', 'Cereza'],
+            'Precio': [1.5, 0.75, 2.0],
+            'Cantidad': [10, 20, 15]
+        }
+
+        df = pd.DataFrame(data)
+        st.table(df)
 
         st.write("{:<5} {:<25} {:<20} {:<10} {:20} {:<25} {:<20}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
         st.write("-" * 60)

@@ -37,7 +37,7 @@ if seleccion_menu == "Inicio":
 if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
         # Conectar a la base de datos
-        conexion = sqlite3.connect('..\BasePruebaProfesoresPrueba.db')
+        conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
         cursor = conexion.cursor()
         
         # Verificar si la tabla existe

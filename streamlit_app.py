@@ -47,7 +47,7 @@ if seleccion_menu == "Consultar tablas":
         xd = cursor.fetchall()
         # Mostrar los registros de forma estructurada
         st.write("\nLista de Proferores:\n")
-        st.write("{:<5} {:<25} {:<20} {:<10}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
+        st.write("{:<5} {:<25} {:<20} {:<10} {:20}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
         st.write("-" * 60)
         for lol in xd:
                 st.write("{:<5} {:<25} {:<20} {:<10}".format(lol[0], lol[1], lol[2],

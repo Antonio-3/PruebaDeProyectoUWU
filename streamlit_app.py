@@ -68,7 +68,7 @@ if seleccion_menu == "Generar Reportes":
         seleccion_profe = st.selectbox('Selecciona un profesor:', df['Profesor'])
         conexion.close()
     
-pr = st.sidebar.button("Generar Reportes")
+pr = st.button("Generar reporte del profesor")
 if pr==True:
-        st.write("xd")
+        st.write("Reporte profe xd")
         

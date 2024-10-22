@@ -41,5 +41,6 @@ if seleccion_menu == "Asistencias":
 st.sidebar.write("\n")
 
 pr = st.sidebar.button("Generar Reportes")
-        st.sidebar.write(pr)
+if pr==True:
+        st.sidebar.write("xd")
         

@@ -69,11 +69,8 @@ if seleccion_menu == "Generar Reportes":
 
         pr = st.button("Generar reporte del profesor")
         if pr==True:
-                # Conectar a la base de datos
-                conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
-                cursorr = conexion.cursor()
-                # Seleccionar todas las materias
-                cursorr.execute('''
+                cursor = conexion.cursor()
+                cursor.execute('''
                 SELECT * FROM materiaprofe WHERE Profesor = xddd
                 ''',seleccion_profeexd)
                 # Recuperar todos los registros
@@ -85,7 +82,7 @@ if seleccion_menu == "Generar Reportes":
                 for lol1 in jsjsjs:
                         st.write("{:<5} {:<25} {:<20} {:<10} {:<25} {:<20} {:<10}".format(lol1[0], lol1[1], lol1[2],
                          lol1[3], lol1[4], lol1[5], lol1[6]))
-                conexion.close()
+        conexion.close()
 
 
                 

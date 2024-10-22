@@ -54,10 +54,6 @@ if seleccion_menu == "Consultar tablas":
         for lol in xd:
                 st.write("{:<5} {:<25} {:<20} {:<10} {:<25} {:<20} {:<10}".format(lol[0], lol[1], lol[2],
                  lol[3], lol[4], lol[5], lol[6]))
-
-
-
-        
         conexion.close()
 
         

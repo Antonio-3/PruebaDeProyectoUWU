@@ -35,6 +35,22 @@ if seleccion_menu == "Inicio":
                 
 if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
+        import sqlite3
+        # Conectar a la base de datos
+        conexion = sqlite3.connect('ProfesoresPrueba.db')
+        cursor = conexion.cursor()
+        # Seleccionar todas las materias
+        cursor.execute('''
+        SELECT * FROM materiaprofe
+        ''')
+        # Recuperar todos los registros
+        materiaprofe = cursor.fetchall()
+        # Mostrar los registros
+        for materia in materiaprofe:
+        print(materia)
+        # Cerrar la conexión
+        conexion.close()
+        
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")
 if seleccion_menu == "Generar Reportes":

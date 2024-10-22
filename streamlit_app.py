@@ -76,7 +76,7 @@ if seleccion_menu == "Generar Reportes":
                 # Seleccionar todas las materias
                 cursorr.execute('''
                 SELECT * FROM materiaprofe WHERE Profesor = xddd
-                ''', (seleccion_profeexd,))
+                ''', (seleccion_profeexd))
                 # Recuperar todos los registros
                 jsjsjs = cursorr.fetchall()
                 # Mostrar los registros de forma estructurada

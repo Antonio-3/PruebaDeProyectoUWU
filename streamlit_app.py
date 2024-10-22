@@ -51,7 +51,7 @@ if seleccion_menu == "Consultar tablas":
         st.write("-" * 60)
         for lol in xd:
                 print("{:<5} {:<25} {:<20} {:<10}".format(lol[0], lol[1], lol[2],
-                lol[3], lol[4], lol[5], lol[6])
+                lol[3], lol[4], lol[5], lol[6]))
                 # Cerrar la conexión
                 conexion.close()
 

@@ -50,7 +50,7 @@ if seleccion_menu == "Consultar tablas":
         st.write("\nLista de Proferores:\n")
 
         data = {
-                'Producto': ['ID', 'Profesores', 'Materia', 'Carrera','Fecha','Horario','Asistencia'],
+                'Producto': ['ID', 'Profesores', 'Materia'],
                 'Precio': [1.5, 0.75, 2.0],
                 'Cantidad': [10, 20, 15]
         }

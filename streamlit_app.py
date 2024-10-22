@@ -66,13 +66,14 @@ if seleccion_menu == "Generar Reportes":
         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
         df = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
         seleccion_profeexd = st.selectbox('Selecciona un profesor:', df['Profesor'])
+        cursor = conexion.cursor()
 
         pr = st.button("Generar reporte del profesor")
         if pr==True:
-                cursor = conexion.cursor()
+                
                 cursor.execute('''
                 SELECT * FROM materiaprofe WHERE Profesor = xddd
-                ''',(seleccion_profeexd))
+                ''',seleccion_profeexd)
                 # Recuperar todos los registros
                 jsjsjs = cursor.fetchall()
                 # Mostrar los registros de forma estructurada

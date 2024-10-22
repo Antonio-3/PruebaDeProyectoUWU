@@ -39,5 +39,10 @@ if seleccion_menu == "Asistencias":
         st.title("Asistencias")
         
 st.sidebar.write("\n")
-st.sidebar.button("Generar Reportes")
+
+BotonReporte=="XD":
+        st.sidebar.button("Generar Reportes")
+
+if BotonReporte == "Generar Reportes"
+        st.write("XD")
         

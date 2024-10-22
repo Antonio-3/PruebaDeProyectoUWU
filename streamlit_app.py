@@ -50,9 +50,9 @@ if seleccion_menu == "Consultar tablas":
         st.write("\nLista de Proferores:\n")
 
         data = {
-                'Producto': ['Manzana', 'Plátano', 'Cereza'],
-            'Precio': [1.5, 0.75, 2.0],
-            'Cantidad': [10, 20, 15]
+                'Producto': ['ID', 'Profesores', 'Materia', 'Carrera','Fecha','Horario','Asistencia'],
+                'Precio': [1.5, 0.75, 2.0],
+                'Cantidad': [10, 20, 15]
         }
 
         df = pd.DataFrame(data)

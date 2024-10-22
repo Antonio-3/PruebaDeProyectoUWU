@@ -63,20 +63,17 @@ if seleccion_menu == "Asistencias":
 if seleccion_menu == "Generar Reportes":
         st.title("Generar Reportes")
         # Conectar a la base de datos
-        conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+        XDD = conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
         cursor = conexion.cursor()
         # Seleccionar todas las materias
         cursor.execute('''
-        SELECT Profesor FROM materiaprofe
+        SELECT DISTINCT Profesor FROM materiaprofe
          ''')
         # Recuperar todos los registros
         xd = cursor.fetchall()
-        OpcionesReporte = st.selectbox("Profesor",
-                                       for lol in xd:
-                                               [lol[xd]])
-        
-                
-        
+
+        seleccion_profe = st.selectbox('Selecciona un profesor:', xd['Profesor'])
+    
 pr = st.sidebar.button("Generar Reportes")
 if pr==True:
         st.write("xd")

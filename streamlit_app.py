@@ -53,8 +53,7 @@ if seleccion_menu == "Consultar tablas":
             st.write("Columnas en la tabla 'materiaprofe':")
             for columna in columnas:
                 st.write(columna[1])  # columna[1] tiene el nombre de la columna
-
-         conexion.close()
+                 conexion.close()
 
 
         

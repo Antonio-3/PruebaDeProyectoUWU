@@ -67,8 +67,7 @@ if seleccion_menu == "Generar Reportes":
         df = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
         seleccion_profe = st.selectbox('Selecciona un profesor:', df['Profesor'])
         conexion.close()
-    
-pr = st.button("Generar reporte del profesor")
-if pr==True:
-        st.write("Reporte profe xd")
+        pr = st.button("Generar reporte del profesor")
+        if pr==True:
+                st.write("Reporte profe xd")
         

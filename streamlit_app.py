@@ -38,22 +38,22 @@ if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
          # Conectar a la base de datos
         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
-        cursor = conexion.cursor()
-        # Seleccionar todas las materias
-        cursor.execute('''
-        SELECT * FROM materiaprofe
-        ''')
-        # Recuperar todos los registros
-        xd = cursor.fetchall()
-        # Mostrar los registros de forma estructurada
-        st.write("\nLista de Proferores:\n")
-        st.write('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia')
-        st.write("-" * 60)
-        for lol in xd:
-                print("{:<5} {:<25} {:<20} {:<10}".format(lol[0], lol[1], lol[2],
-                lol[3], lol[4], lol[5], lol[6]))
-                # Cerrar la conexión
-                conexion.close()
+                cursor = conexion.cursor()
+                # Seleccionar todas las materias
+                cursor.execute('''
+                SELECT * FROM materiaprofe
+                ''')
+                # Recuperar todos los registros
+                xd = cursor.fetchall()
+                # Mostrar los registros de forma estructurada
+                print("\nLista de Proferores:\n")
+                print("{:<5} {:<25} {:<20} {:<10}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
+                print("-" * 60)
+                for lol in xd:
+                       print("{:<5} {:<25} {:<20} {:<10}".format(lol[0], lol[1], lol[2],
+                        lol[3], lol[4], lol[5], lol[6]))
+        
+        conexion.close()
 
         
 if seleccion_menu == "Asistencias":

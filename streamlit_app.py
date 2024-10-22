@@ -72,7 +72,7 @@ if seleccion_menu == "Generar Reportes":
         if pr==True:
                 
                 cursor.execute('''
-                SELECT * FROM materiaprofe WHERE Profesor = xddd
+                SELECT * FROM materiaprofe WHERE Profesor = ?
                 ''',seleccion_profeexd)
                 # Recuperar todos los registros
                 jsjsjs = cursor.fetchall()

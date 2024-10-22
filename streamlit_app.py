@@ -47,11 +47,23 @@ if seleccion_menu == "Consultar tablas":
         xd = cursor.fetchall()
         # Mostrar los registros de forma estructurada
         st.write("\nLista de Proferores:\n")
+
+        st.dataframe(tabla_df.style.format({
+        "Pago Mensual": "{:,.2f}",
+        "Interés": "{:,.2f}",
+        "Amortización": "{:,.2f}",
+        "Saldo Restante": "{:,.2f}"
+            }))
+
+
         st.write("{:<5} {:<25} {:<20} {:<10} {:20} {:<25} {:<20}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
         st.write("-" * 60)
         for lol in xd:
                 st.write("{:<5} {:<25} {:<20} {:<10} {:<25} {:<20} {:<10}".format(lol[0], lol[1], lol[2],
                  lol[3], lol[4], lol[5], lol[6]))
+
+
+
         
         conexion.close()
 

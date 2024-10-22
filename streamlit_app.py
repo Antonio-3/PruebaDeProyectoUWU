@@ -36,7 +36,6 @@ if seleccion_menu == "Inicio":
                 
 if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
-       try:
         # Conectar a la base de datos
         conexion = sqlite3.connect('..\BasePruebaProfesoresPrueba.db')
         cursor = conexion.cursor()
@@ -54,12 +53,8 @@ if seleccion_menu == "Consultar tablas":
             st.write("Columnas en la tabla 'materiaprofe':")
             for columna in columnas:
                 st.write(columna[1])  # columna[1] tiene el nombre de la columna
-        
-        except sqlite3.Error as e:
-                st.error(f"Ocurrió un error al acceder a la base de datos: {e}")
-        finally:
-                if 'conexion' in locals():
-                            conexion.close()
+
+         conexion.close()
 
 
         

@@ -37,7 +37,7 @@ if seleccion_menu == "Inicio":
 if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
         # Conectar a la base de datos
-        conexion = sqlite3.connect('\ProfesoresPrueba.db')
+        conexion = sqlite3.connect('ProfesoresPrueba.db')
         cursor = conexion.cursor()
         # Seleccionar todas las materias
         cursor.execute('''
@@ -45,9 +45,13 @@ if seleccion_menu == "Consultar tablas":
         ''')
         # Recuperar todos los registros
         materias = cursor.fetchall()
-        # Mostrar los registros
+        # Mostrar los registros de forma estructurada
+        print("\nLista de Materias:\n")
+        print("{:<5} {:<25} {:<20} {:<10}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
+        print("-" * 60)
         for materia in materias:
-                print(materia)
+        print("{:<5} {:<25} {:<20} {:<10}".format(materia[0], materia[1], materia[2],
+        materia[3], materia[4], materia[5], materia[6]))
         # Cerrar la conexión
         conexion.close()
 

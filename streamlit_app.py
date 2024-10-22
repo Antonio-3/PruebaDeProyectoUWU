@@ -37,6 +37,16 @@ if seleccion_menu == "Inicio":
 if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
          # Conectar a la base de datos
+   import sqlite3
+import streamlit as st
+
+# Menú de opciones
+seleccion_menu = st.sidebar.selectbox("Menú", ["Consultar tablas", "Otra opción"])
+
+if seleccion_menu == "Consultar tablas":
+    st.title("Tablas")
+
+    # Conectar a la base de datos
     try:
         conexion = sqlite3.connect('ProfesoresPrueba.db')
         cursor = conexion.cursor()
@@ -62,13 +72,14 @@ if seleccion_menu == "Consultar tablas":
                 st.table(materiaprofe)
             else:
                 st.write("No se encontraron registros en la tabla.")
-    
+
     except sqlite3.Error as e:
         st.write(f"Error al conectar o consultar la base de datos: {e}")
-    
+
     finally:
         if conexion:
             conexion.close()
+
 
         
 if seleccion_menu == "Asistencias":

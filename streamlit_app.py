@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import sqlite3
 
 st.sidebar.image(image='img/LogoPerla.png',caption="")
 st.sidebar.caption("Bienvenido Admin!.")
@@ -35,19 +36,27 @@ if seleccion_menu == "Inicio":
                 
 if seleccion_menu == "Consultar tablas":
         st.title("Tablas")
-        import sqlite3
-        # Conectar a la base de datos
+         # Conectar a la base de datos
         conexion = sqlite3.connect('ProfesoresPrueba.db')
         cursor = conexion.cursor()
-        # Seleccionar todas las materias
+        
+            # Ejecutar consulta para seleccionar todas las materias
         cursor.execute('''SELECT * FROM materiaprofe''')
-        # Recuperar todos los registros
+        
+            # Recuperar todos los registros
         materiaprofe = cursor.fetchall()
-        # Mostrar los registros
-        for materia in materiaprofe:
-                print(materia)
-        # Cerrar la conexión
+        
+            # Si hay datos, mostrarlos
+         if materiaprofe:
+                # Mostrar los registros en formato tabla
+                st.table(materiaprofe)  # También puedes usar st.write(materiaprofe)
+         else:
+                st.write("No se encontraron registros.")
+        
+            # Cerrar la conexión
         conexion.close()
+
+
         
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")

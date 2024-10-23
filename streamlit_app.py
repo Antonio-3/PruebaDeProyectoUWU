@@ -84,7 +84,6 @@ if seleccion_menu == "Generar Reportes":
                 # Cerrar la conexión
                 conexion.close()
 
-
                 # Crear una instancia de FPDF
                 pdf = FPDF()
                 pdf.set_auto_page_break(auto=True, margin=15)
@@ -100,10 +99,14 @@ if seleccion_menu == "Generar Reportes":
                 pdf.set_font('Arial', '', 12)
                 # Encabezados de la tabla
                 pdf.cell(20, 10, 'ID', 1)
-                pdf.cell(80, 10, 'Nombre', 1)
-                pdf.cell(60, 10, 'Profesor', 1)
-                pdf.cell(30, 10, 'Créditos', 1)
+                pdf.cell(80, 10, 'Profesor', 1)
+                pdf.cell(60, 10, 'Materia', 1)
+                pdf.cell(30, 10, 'Carrera', 1)
+                pdf.cell(80, 10, 'Fecha', 1)
+                pdf.cell(60, 10, 'Horario', 1)
+                pdf.cell(30, 10, 'Asistencia', 1)
                 pdf.ln()
+                
                 # Agregar los registros de materias al PDF
                 for materia in materias:
                         pdf.cell(20, 10, str(materia[0]), 1)
@@ -112,7 +115,7 @@ if seleccion_menu == "Generar Reportes":
                         pdf.cell(30, 10, str(materia[3]), 1)
                         pdf.ln()
                         # Guardar el archivo PDF
-                        pdf.output('reporte_materias.pdf')
+                        pdf.output('XDxd.pdf')
 
 
                 

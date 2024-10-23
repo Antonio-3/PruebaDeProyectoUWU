@@ -108,7 +108,7 @@ if seleccion_menu == "Generar Reportes":
                         
                         # Agregar los registros de materias al PDF
                         for jaja in ala:
-                                pdf.cell(20, 10, str(jaja[0])
+                                pdf.cell(20, 10, str(jaja[0]))
                                 pdf.cell(80, 10, jaja[1])
                                 pdf.cell(60, 10, jaja[2])
                                 pdf.cell(30, 10, jaja[3])

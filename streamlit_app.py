@@ -80,7 +80,7 @@ if seleccion_menu == "Generar Reportes":
                 SELECT * FROM materiaprofe
                 ''')
                 # Recuperar todos los registros
-                materias = cursor.fetchall()
+                ala = cursor.fetchall()
                 # Cerrar la conexión
                 conexion.close()
 
@@ -108,11 +108,14 @@ if seleccion_menu == "Generar Reportes":
                 pdf.ln()
                 
                 # Agregar los registros de materias al PDF
-                for materia in materias:
-                        pdf.cell(20, 10, str(materia[0]), 1)
-                        pdf.cell(80, 10, materia[1], 1)
-                        pdf.cell(60, 10, materia[2], 1)
-                        pdf.cell(30, 10, str(materia[3]), 1)
+                for jaja in ala:
+                        pdf.cell(20, 10, str(jaja[0]), 1)
+                        pdf.cell(80, 10, jaja[1], 1)
+                        pdf.cell(60, 10, jaja[2], 1)
+                        pdf.cell(30, 10, jaja[3], 1)
+                        pdf.cell(80, 10, str(jaja[4]), 1)
+                        pdf.cell(60, 10, str(jaja[5]), 1)
+                        pdf.cell(30, 10, str(jaja[6]), 1)
                         pdf.ln()
                         # Guardar el archivo PDF
                         pdf.output('XDxd.pdf')

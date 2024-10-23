@@ -77,7 +77,7 @@ if seleccion_menu == "Generar Reportes":
                 return pdf_output
                 
         # Mostrar un botón en Streamlit para generar y descargar el PDF
-        if st.button('Generar PDF'):
+        if st.button('Descargar Reporte del profesor'):
                 pdf_file = generar_pdf()
                     
                 # Abrir el archivo PDF y mostrar un enlace de descarga

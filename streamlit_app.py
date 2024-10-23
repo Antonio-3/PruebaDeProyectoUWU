@@ -83,9 +83,6 @@ if seleccion_menu == "Generar Reportes":
                         ''')
                         # Recuperar todos los registros
                         ala = cursor.fetchall()
-                        # Cerrar la conexión
-                        conexion.close()
-        
                         # Crear una instancia de FPDF
                         pdf = FPDF()
                         pdf.set_auto_page_break(auto=True, margin=15)
@@ -123,6 +120,7 @@ if seleccion_menu == "Generar Reportes":
                         pdf_output = 'XDxd.pdf'
                         pdf.output(pdf_output)
                         return pdf_output
+                conexion.close()
                         
                 # Mostrar un botón en Streamlit para generar y descargar el PDF
                 if st.button('Generar Reporte PDF'):

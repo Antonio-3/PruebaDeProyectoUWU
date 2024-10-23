@@ -79,7 +79,7 @@ if seleccion_menu == "Asistencias":
                     
                 # Abrir el archivo PDF y mostrar un enlace de descarga
                 with open(pdf_file, "rb") as f:
-                st.download_button(label="Descargar PDF", data=f, file_name="mi_documento.pdf")
+                        st.download_button(label="Descargar PDF", data=f, file_name="mi_documento.pdf")
 
 
 if seleccion_menu == "Generar Reportes":

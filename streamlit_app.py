@@ -60,7 +60,7 @@ if seleccion_menu == "Consultar tablas":
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")
         # Función para generar el PDF
-         def generar_pdf():
+        def generar_pdf():
                 pdf = FPDF()
                 pdf.add_page()
                 pdf.set_font("Arial", size=12)

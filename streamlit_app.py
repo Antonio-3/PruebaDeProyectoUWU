@@ -71,7 +71,7 @@ if seleccion_menu == "Asistencias":
                 pdf.output(pdf_output)
                     
                 # Retornar el archivo generado
-                 return pdf_output
+                return pdf_output
                 
         # Mostrar un botón en Streamlit para generar y descargar el PDF
         if st.button('Generar PDF'):

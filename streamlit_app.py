@@ -72,54 +72,64 @@ if seleccion_menu == "Generar Reportes":
 
         pr = st.button("Generar reporte del profesor")
         if pr:
-                st.write(seleccion_profeexd)
-                # Conectar a la base de datos
-                conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
-                cursor = conexion.cursor()
-                # Seleccionar todas las materias
-                cursor.execute('''
-                SELECT * FROM materiaprofe
-                ''')
-                # Recuperar todos los registros
-                ala = cursor.fetchall()
-                # Cerrar la conexión
-                conexion.close()
-
-                # Crear una instancia de FPDF
-                pdf = FPDF()
-                pdf.set_auto_page_break(auto=True, margin=15)
-                # Agregar una página
-                pdf.add_page()
-                # Establecer el tipo de fuente (Arial, negrita, tamaño 16)
-                pdf.set_font('Arial', 'B', 16)
-                # Título del reporte
-                pdf.cell(200, 10, 'Reporte de Materias', ln=True, align='C')
-                # Espacio adicional
-                pdf.ln(10)
-                # Establecer el tipo de fuente para el contenido (Arial, tamaño 12)
-                pdf.set_font('Arial', '', 12)
-                # Encabezados de la tabla
-                pdf.cell(20, 10, 'ID', 1)
-                pdf.cell(80, 10, 'Profesor', 1)
-                pdf.cell(60, 10, 'Materia', 1)
-                pdf.cell(30, 10, 'Carrera', 1)
-                pdf.cell(80, 10, 'Fecha', 1)
-                pdf.cell(60, 10, 'Horario', 1)
-                pdf.cell(30, 10, 'Asistencia', 1)
-                pdf.ln()
-                
-                # Agregar los registros de materias al PDF
-                for jaja in ala:
-                        pdf.cell(20, 10, str(jaja[0]), 1)
-                        pdf.cell(80, 10, jaja[1], 1)
-                        pdf.cell(60, 10, jaja[2], 1)
-                        pdf.cell(30, 10, jaja[3], 1)
-                        pdf.cell(80, 10, str(jaja[4]), 1)
-                        pdf.cell(60, 10, str(jaja[5]), 1)
-                        pdf.cell(30, 10, str(jaja[6]), 1)
+                def generar_pdf():
+                        st.write(seleccion_profeexd)
+                        # Conectar a la base de datos
+                        conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+                        cursor = conexion.cursor()
+                        # Seleccionar todas las materias
+                        cursor.execute('''
+                        SELECT * FROM materiaprofe
+                        ''')
+                        # Recuperar todos los registros
+                        ala = cursor.fetchall()
+                        # Cerrar la conexión
+                        conexion.close()
+        
+                        # Crear una instancia de FPDF
+                        pdf = FPDF()
+                        pdf.set_auto_page_break(auto=True, margin=15)
+                        # Agregar una página
+                        pdf.add_page()
+                        # Establecer el tipo de fuente (Arial, negrita, tamaño 16)
+                        pdf.set_font('Arial', 'B', 16)
+                        # Título del reporte
+                        pdf.cell(200, 10, 'Reporte de Materias', ln=True, align='C')
+                        # Espacio adicional
+                        pdf.ln(10)
+                        # Establecer el tipo de fuente para el contenido (Arial, tamaño 12)
+                        pdf.set_font('Arial', '', 12)
+                        # Encabezados de la tabla
+                        pdf.cell(20, 10, 'ID', 1)
+                        pdf.cell(80, 10, 'Profesor', 1)
+                        pdf.cell(60, 10, 'Materia', 1)
+                        pdf.cell(30, 10, 'Carrera', 1)
+                        pdf.cell(80, 10, 'Fecha', 1)
+                        pdf.cell(60, 10, 'Horario', 1)
+                        pdf.cell(30, 10, 'Asistencia', 1)
                         pdf.ln()
-                        # Guardar el archivo PDF
-                pdf.output('XDxd.pdf')
+                        
+                        # Agregar los registros de materias al PDF
+                        for jaja in ala:
+                                pdf.cell(20, 10, str(jaja[0]), 1)
+                                pdf.cell(80, 10, jaja[1], 1)
+                                pdf.cell(60, 10, jaja[2], 1)
+                                pdf.cell(30, 10, jaja[3], 1)
+                                pdf.cell(80, 10, str(jaja[4]), 1)
+                                pdf.cell(60, 10, str(jaja[5]), 1)
+                                pdf.cell(30, 10, str(jaja[6]), 1)
+                                pdf.ln()
+                                # Guardar el archivo PDF
+                        pdf_output = 'XDxd.pdf'
+                        pdf.output(pdf_output)
+                        return pdf_output
+                        
+                # Mostrar un botón en Streamlit para generar y descargar el PDF
+                if st.button('Generar Reporte PDF'):
+                    pdf_file = generar_pdf()
+                    # Abrir el archivo PDF y mostrar un enlace de descarga
+                    with open(pdf_file, "rb") as f:
+                        st.download_button(label="Descargar PDF", data=f, file_name="XDxd.pdf")
 
 
                 

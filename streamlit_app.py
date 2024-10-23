@@ -58,7 +58,7 @@ if seleccion_menu == "Consultar tablas":
 
         
 if seleccion_menu == "Asistencias":
-        st:
+        with st:
                 title("Asistencias")
                 beta_sign = """
                 <span style="

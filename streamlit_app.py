@@ -1,7 +1,8 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import sqlite3
 import pandas as pd
+import sqlite3
+from fpdf import FPDF
 
 st.sidebar.image(image='img/LogoPerla.png',caption="")
 st.sidebar.caption("Bienvenido Admin!.")
@@ -67,23 +68,51 @@ if seleccion_menu == "Generar Reportes":
         df = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
         seleccion_profeexd = st.selectbox('Selecciona un profesor:', df['Profesor'])
         cursor = conexion.cursor()
+        conexion.close()
 
         pr = st.button("Generar reporte del profesor")
         if pr==True:
-                
+                # Conectar a la base de datos
+                conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+                cursor = conexion.cursor()
+                # Seleccionar todas las materias
                 cursor.execute('''
-                SELECT * FROM materiaprofe WHERE Profesor = ?
-                ''',seleccion_profeexd)
+                SELECT * FROM materiaprofe
+                ''')
                 # Recuperar todos los registros
-                jsjsjs = cursor.fetchall()
-                # Mostrar los registros de forma estructurada
-                st.write("\nLista de Proferores:\n")
-                st.write("{:<5} {:<25} {:<20} {:<10} {:20} {:<25} {:<20}".format('ID', 'Profesor', 'Materia', 'Carrera','Fecha','Horario','Asistencia'))
-                st.write("-" * 60)
-                for lol1 in jsjsjs:
-                        st.write("{:<5} {:<25} {:<20} {:<10} {:<25} {:<20} {:<10}".format(lol1[0], lol1[1], lol1[2],
-                         lol1[3], lol1[4], lol1[5], lol1[6]))
-        conexion.close()
+                materias = cursor.fetchall()
+                # Cerrar la conexión
+                conexion.close()
+
+
+                # Crear una instancia de FPDF
+                pdf = FPDF()
+                pdf.set_auto_page_break(auto=True, margin=15)
+                # Agregar una página
+                pdf.add_page()
+                # Establecer el tipo de fuente (Arial, negrita, tamaño 16)
+                pdf.set_font('Arial', 'B', 16)
+                # Título del reporte
+                pdf.cell(200, 10, 'Reporte de Materias', ln=True, align='C')
+                # Espacio adicional
+                pdf.ln(10)
+                # Establecer el tipo de fuente para el contenido (Arial, tamaño 12)
+                pdf.set_font('Arial', '', 12)
+                # Encabezados de la tabla
+                pdf.cell(20, 10, 'ID', 1)
+                pdf.cell(80, 10, 'Nombre', 1)
+                pdf.cell(60, 10, 'Profesor', 1)
+                pdf.cell(30, 10, 'Créditos', 1)
+                pdf.ln()
+                # Agregar los registros de materias al PDF
+                for materia in materias:
+                pdf.cell(20, 10, str(materia[0]), 1)
+                pdf.cell(80, 10, materia[1], 1)
+                pdf.cell(60, 10, materia[2], 1)
+                pdf.cell(30, 10, str(materia[3]), 1)
+                pdf.ln()
+                # Guardar el archivo PDF
+                pdf.output('reporte_materias.pdf')
 
 
                 

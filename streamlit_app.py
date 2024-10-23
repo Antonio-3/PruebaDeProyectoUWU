@@ -67,7 +67,7 @@ if seleccion_menu == "Generar Reportes":
                 pdf = FPDF()
                 pdf.add_page()
                 pdf.set_font("Arial", size=12)
-                pdf.cell(200, 10, txt="Hola, este es tu PDF!", ln=True, align='C')
+                pdf.cell(200, 10, txt="Reporte JSJSJSJNDAOUWNDAN IDNCAIWNDSODAJOSADDXDXDXDXDXDXDXDXDXDDXDXDXDXDXDXDXDDXDXDXSEOFNSOUENFOUSENFUONSEOUFNSEOUFNOUSENFOUSNEFUONSEOUFNOSUE", ln=True, align='C')
                     
                 # Guardar PDF en un archivo temporal
                 pdf_output = 'output.pdf'
@@ -83,14 +83,13 @@ if seleccion_menu == "Generar Reportes":
         seleccion_profeexd = st.selectbox('Selecciona un profesor:', df['Profesor'])
         cursor = conexion.cursor()
         conexion.close()
-        
-        # Mostrar un botón en Streamlit para generar y descargar el PDF
-        if st.button('Descargar Reporte del profesor'):
-                pdf_file = generar_pdf()
+
+         pdf_file = generar_pdf()
                     
                 # Abrir el archivo PDF y mostrar un enlace de descarga
                 with open(pdf_file, "rb") as f:
-                        st.download_button(label="Descargar Reporte del profesor", data=f, file_name="mi_documento.pdf")
+                        st.download_button(label="Descargar Reporte del profesor", data=f, file_name="PruebaReporteJSJSJXDD.pdf")
+               
 
                 
         

@@ -78,7 +78,7 @@ if seleccion_menu == "Asistencias":
                 pdf_file = generar_pdf()
                     
                 # Abrir el archivo PDF y mostrar un enlace de descarga
-                 with open(pdf_file, "rb") as f:
+                with open(pdf_file, "rb") as f:
                 st.download_button(label="Descargar PDF", data=f, file_name="mi_documento.pdf")
 
 

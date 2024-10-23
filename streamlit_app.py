@@ -20,7 +20,7 @@ with st.sidebar:
             BETA
         </span>
         """
-        seleccion_menu = st.option_menu(
+        seleccion_menu = option_menu(
             menu_title="Menú",
             options=["Inicio","Consultar tablas", "Asistencias", "Generar Reportes"]
         )
@@ -58,23 +58,23 @@ if seleccion_menu == "Consultar tablas":
 
         
 if seleccion_menu == "Asistencias":
-                st.title("Asistencias")
-                beta_sign = """
-                <span style="
-                font-size: 10px;
-                font-weight: bold;
-                color: #ffffff;
-                background-color: #ff5733;
-                padding: 5px 10px;
-                border-radius: 4px;
-                ">
-                        BETA
-                </span>
-                """
-                seleccion_menu2 = option_menu(
-                    menu_title2="Que desea hacer?",
-                    options2=["Modificar Asistencia","Poner asistencia"]
-                )
+        st.title("Asistencias")
+        beta_sign = """
+        <span style="
+        font-size: 10px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff5733;
+        padding: 5px 10px;
+        border-radius: 4px;
+        ">
+                BETA
+        </span>
+        """
+        seleccion_menu2 = st.option_menu(
+                menu_title2="Que desea hacer?",
+                options2=["Modificar Asistencia","Poner asistencia"]
+        )
 
         
         

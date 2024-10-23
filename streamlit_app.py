@@ -72,7 +72,7 @@ if seleccion_menu == "Asistencias":
                         BETA
                 </span>
                 """
-                option_menu(
+                xd= option_menu(
                         menu_title2="Que desea hacer?",
                         options2=["Modificar Asistencia","Poner asistencia"]
                 )

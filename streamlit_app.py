@@ -119,7 +119,7 @@ if seleccion_menu == "Generar Reportes":
                         pdf.cell(30, 10, str(jaja[6]), 1)
                         pdf.ln()
                         # Guardar el archivo PDF
-                        pdf.output('XDxd.pdf')
+                pdf.output('XDxd.pdf')
 
 
                 

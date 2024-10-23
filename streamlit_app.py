@@ -72,8 +72,7 @@ if seleccion_menu == "Generar Reportes":
 
         pr = st.button("Generar reporte del profesor")
         if pr==True:
-
-                st.write(pr)
+                st.write(seleccon_profeexd)
                 # Conectar a la base de datos
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                 cursor = conexion.cursor()

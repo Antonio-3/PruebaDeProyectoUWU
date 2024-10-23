@@ -67,7 +67,9 @@ if seleccion_menu == "Generar Reportes":
                 pdf = FPDF()
                 pdf.add_page()
                 pdf.set_font("Arial", size=12)
-                pdf.cell(200, 10, txt="Reporte JSJSJSJNDAOUWNDAN IDNCAIWNDSODAJOSADDXDXDXDXDXDXDXDXDXDDXDXDXDXDXDXDXDDXDXDXSEOFNSOUENFOUSENFUONSEOUFNSEOUFNOUSENFOUSNEFUONSEOUFNOSUE", ln=True, align='C')
+                pdf.cell(200, 10, txt="Reporte JSJSJSJNDAOUWNDAN OFNSOUENFOUSENFUONSEOUFNSEOUFNOUSENFOUSNEFUONSEOUFNOSUE", ln=True, align='C')
+                pdf.cell(200, 10, txt="awdawdawdxdddd", ln=True, align='C')
+                
                     
                 # Guardar PDF en un archivo temporal
                 pdf_output = 'output.pdf'

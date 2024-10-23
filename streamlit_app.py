@@ -20,7 +20,7 @@ with st.sidebar:
             BETA
         </span>
         """
-        seleccion_menu = option_menu(
+        seleccion_menu = st.option_menu(
             menu_title="Menú",
             options=["Inicio","Consultar tablas", "Asistencias", "Generar Reportes"]
         )

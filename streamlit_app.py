@@ -71,7 +71,7 @@ if seleccion_menu == "Asistencias":
                 BETA
         </span>
         """
-        st.option_menu(
+        option_menu(
                 menu_title2="Que desea hacer?",
                 options2=["Modificar Asistencia","Poner asistencia"]
         )

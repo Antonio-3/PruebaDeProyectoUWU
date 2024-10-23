@@ -59,6 +59,9 @@ if seleccion_menu == "Consultar tablas":
         
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")
+        
+if seleccion_menu == "Generar Reportes":
+        
         # Función para generar el PDF
         def generar_pdf():
                 pdf = FPDF()
@@ -80,9 +83,7 @@ if seleccion_menu == "Asistencias":
                 # Abrir el archivo PDF y mostrar un enlace de descarga
                 with open(pdf_file, "rb") as f:
                         st.download_button(label="Descargar PDF", data=f, file_name="mi_documento.pdf")
-
-
-if seleccion_menu == "Generar Reportes":
+                        
         st.title("Generar Reportes")
         # Conectar a la base de datos
         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')

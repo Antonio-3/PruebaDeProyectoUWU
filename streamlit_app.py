@@ -59,6 +59,27 @@ if seleccion_menu == "Consultar tablas":
         
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")
+        # Función para generar el PDF
+         def generar_pdf():
+                pdf = FPDF()
+                pdf.add_page()
+                pdf.set_font("Arial", size=12)
+                pdf.cell(200, 10, txt="Hola, este es tu PDF!", ln=True, align='C')
+                    
+                # Guardar PDF en un archivo temporal
+                pdf_output = 'output.pdf'
+                pdf.output(pdf_output)
+                    
+                # Retornar el archivo generado
+                 return pdf_output
+                
+        # Mostrar un botón en Streamlit para generar y descargar el PDF
+        if st.button('Generar PDF'):
+                pdf_file = generar_pdf()
+                    
+                # Abrir el archivo PDF y mostrar un enlace de descarga
+                 with open(pdf_file, "rb") as f:
+                st.download_button(label="Descargar PDF", data=f, file_name="mi_documento.pdf")
 
 
 if seleccion_menu == "Generar Reportes":
@@ -72,27 +93,7 @@ if seleccion_menu == "Generar Reportes":
 
         pr = st.button("Generar reporte del profesor")
         if pr:
-                # Función para generar el PDF
-                def generar_pdf():
-                    pdf = FPDF()
-                    pdf.add_page()
-                    pdf.set_font("Arial", size=12)
-                    pdf.cell(200, 10, txt="Hola, este es tu PDF!", ln=True, align='C')
-                    
-                    # Guardar PDF en un archivo temporal
-                    pdf_output = 'output.pdf'
-                    pdf.output(pdf_output)
-                    
-                    # Retornar el archivo generado
-                    return pdf_output
-                
-                # Mostrar un botón en Streamlit para generar y descargar el PDF
-                if st.button('Generar PDF'):
-                    pdf_file = generar_pdf()
-                    
-                    # Abrir el archivo PDF y mostrar un enlace de descarga
-                    with open(pdf_file, "rb") as f:
-                        st.download_button(label="Descargar PDF", data=f, file_name="mi_documento.pdf")
+                st.write("xd")
 
 
                 

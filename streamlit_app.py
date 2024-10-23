@@ -59,6 +59,25 @@ if seleccion_menu == "Consultar tablas":
         
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")
+        with st:
+        beta_sign = """
+        <span style="
+        font-size: 10px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff5733;
+        padding: 5px 10px;
+        border-radius: 4px;
+        ">
+            BETA
+        </span>
+        """
+        seleccion_menu = option_menu(
+            menu_title="Menú",
+            options=["Poner Asistencia","Consultar tablas", "Asistencias", "Generar Reportes"]
+        )
+
+        
         
 if seleccion_menu == "Generar Reportes":
         

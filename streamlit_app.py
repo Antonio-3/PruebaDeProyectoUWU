@@ -88,7 +88,7 @@ if seleccion_menu == "Generar Reportes":
                     
          # Abrir el archivo PDF y mostrar un enlace de descarga
         with open(pdf_file, "rb") as f:
-        st.download_button(label="Descargar Reporte del profesor", data=f, file_name="PruebaReporteJSJSJXDD.pdf")
+                st.download_button(label="Descargar Reporte del profesor", data=f, file_name="PruebaReporteJSJSJXDD.pdf")
                
 
                 

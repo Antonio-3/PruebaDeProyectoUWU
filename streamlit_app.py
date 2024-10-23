@@ -75,14 +75,6 @@ if seleccion_menu == "Generar Reportes":
                     
                 # Retornar el archivo generado
                 return pdf_output
-                
-        # Mostrar un botón en Streamlit para generar y descargar el PDF
-        if st.button('Descargar Reporte del profesor'):
-                pdf_file = generar_pdf()
-                    
-                # Abrir el archivo PDF y mostrar un enlace de descarga
-                with open(pdf_file, "rb") as f:
-                        st.download_button(label="Descargar Reporte del profesor", data=f, file_name="mi_documento.pdf")
                         
         st.title("Generar Reportes")
         # Conectar a la base de datos
@@ -91,11 +83,14 @@ if seleccion_menu == "Generar Reportes":
         seleccion_profeexd = st.selectbox('Selecciona un profesor:', df['Profesor'])
         cursor = conexion.cursor()
         conexion.close()
-
-        pr = st.button("Generar reporte del profesor")
-        if pr:
-                st.write("xd")
-
+        
+        # Mostrar un botón en Streamlit para generar y descargar el PDF
+        if st.button('Descargar Reporte del profesor'):
+                pdf_file = generar_pdf()
+                    
+                # Abrir el archivo PDF y mostrar un enlace de descarga
+                with open(pdf_file, "rb") as f:
+                        st.download_button(label="Descargar Reporte del profesor", data=f, file_name="mi_documento.pdf")
 
                 
         

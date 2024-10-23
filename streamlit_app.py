@@ -59,23 +59,22 @@ if seleccion_menu == "Consultar tablas":
         
 if seleccion_menu == "Asistencias":
         st.title("Asistencias")
-        with st.sidebar:
-                beta_sign = """
-                <span style="
-                font-size: 10px;
-                font-weight: bold;
-                color: #ffffff;
-                background-color: #ff5733;
-                padding: 5px 10px;
-                border-radius: 4px;
-                ">
-                        BETA
-                </span>
-                """
-                xd= option_menu(
-                        menu_title2="Que desea hacer?",
-                        options2=["Modificar Asistencia","Poner asistencia"]
-                )
+        beta_sign = """
+        <span style="
+        font-size: 10px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff5733;
+        padding: 5px 10px;
+        border-radius: 4px;
+        ">
+                BETA
+        </span>
+        """
+        option_menu(
+                menu_title2="Que desea hacer?",
+                options2=["Modificar Asistencia","Poner asistencia"]
+        )
 
         
         

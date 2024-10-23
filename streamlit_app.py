@@ -58,8 +58,7 @@ if seleccion_menu == "Consultar tablas":
 
         
 if seleccion_menu == "Asistencias":
-        with st:
-                title("Asistencias")
+                st.title("Asistencias")
                 beta_sign = """
                 <span style="
                 font-size: 10px;
